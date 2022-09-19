@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer"
 import { NavBar } from "../components/NavBar"
 import { BriefcasePage } from "./BriefcasePage"
-import { ContactPage } from "./Contactpage"
+import { ContactPage } from "./ContactPage"
 import { ExperiencePage } from "./ExperiencePage"
 import { HomePage } from "./HomePage"
 import { ProfilePage } from "./ProfilePage"
