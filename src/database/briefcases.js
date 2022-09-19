@@ -28,7 +28,7 @@ export const briefcases = [
         title: "Landing Page",
         description: "Descripcion 4",
         image: "../src/assets/briefcases/landingpage.jpg",
-        url: "",
+        url: "https://yonnatanbustos-landing-page.web.app/",
         repository: "https://github.com/yonnatanbustos1/landing-page"
     }
 ]

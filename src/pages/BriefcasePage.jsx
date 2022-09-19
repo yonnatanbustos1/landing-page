@@ -15,6 +15,7 @@ export const BriefcasePage = () => {
                         title={briefcase.title}
                         description={briefcase.description}
                         url={briefcase.url}
+                        repository={briefcase.repository}
                     />
                 ))}
             </div>
