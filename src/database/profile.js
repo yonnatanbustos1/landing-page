@@ -3,5 +3,6 @@ export const profile = {
     numberIdentification: "1094960469",
     birthDate: "14 Enero 1997",
     placeBirth: "Caicedonia, Valle, Colombia",
-    civilStatus: "Soltero"
+    civilStatus: "Soltero",
+    email: "yonnatanbustos97@gmail.com"
 }

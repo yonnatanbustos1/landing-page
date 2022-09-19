@@ -24,6 +24,7 @@ export const LandingPage = () => {
                         birthDate={profile.birthDate}
                         placeBirth={profile.placeBirth}
                         civilStatus={profile.civilStatus}
+                        email={profile.email}
                     />
                 </section>
                 <section id="studies">

@@ -1,4 +1,4 @@
-export const ProfilePage = ({ fullName, numberIdentification, birthDate, placeBirth, civilStatus }) => {
+export const ProfilePage = ({ fullName, numberIdentification, birthDate, placeBirth, civilStatus, email }) => {
 
     return (
         <div className="flex flex-wrap md:mx-1 xl:mx-5 my-10 px-5 pt-1 rounded-2xl md:border-l-8 md:border-l-[#7B003A]">
@@ -60,6 +60,17 @@ export const ProfilePage = ({ fullName, numberIdentification, birthDate, placeBi
                         <div className="md:w-2/3">
                             <p
                                 className="appearance-none w-full py-2 px-4 leading-tight">{civilStatus}</p>
+                        </div>
+                    </div>
+                    <div className="md:flex md:items-center mb-1">
+                        <div className="md:w-1/3 sm:w-">
+                            <p className="block font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                E-mail:
+                            </p>
+                        </div>
+                        <div className="md:w-2/3">
+                            <p
+                                className="appearance-none w-full py-2 px-4 leading-tight">{email}</p>
                         </div>
                     </div>
                 </form>
