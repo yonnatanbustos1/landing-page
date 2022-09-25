@@ -5,7 +5,7 @@ import { Link } from "react-scroll"
 export const NavBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
-        <nav className="flex flex-wrap items-center px-2 py-3 justify-between bg-[#7B003A] mb-3 fixed w-full">
+        <nav className="flex flex-wrap items-center px-2 py-3 justify-between z-50 bg-[#7B003A] mb-3 fixed w-full">
             <div className="container flex flex-wrap items-center justify-between">
                 <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <Placeholder />

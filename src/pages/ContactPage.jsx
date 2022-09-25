@@ -4,6 +4,7 @@ import { useState } from 'react';
 import emailkey from '../../.env/emailkey';
 import validator from 'validator';
 import { AlertError } from '../components/AlertError';
+import { AlertSuccess } from '../components/AlertSuccess';
 
 export const ContactPage = () => {
 
@@ -13,22 +14,24 @@ export const ContactPage = () => {
     const [email, setEmail] = useState("");
 
     const [error, setError] = useState(false);
-    const [messageError, setMessageError] = useState("")
+    const [success, setSuccess] = useState(false);
+    const [messageAlert, setMessageAlert] = useState("")
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError(false)
+        setSuccess(false)
+        setMessageAlert("")
 
         if ([fullName, email, subject, message].includes('')) {
-            console.error("Faltan campos")
-            setMessageError("Faltan campos por diligenciar")
+            setMessageAlert("Faltan campos por diligenciar")
             setError(true)
             return
         }
 
         if (!validator.isEmail(email)) {
-            console.error("No es un email")
-            setMessageError("El email no es valido")
+            setMessageAlert("El email no es valido")
             setError(true)
             return
         }
@@ -40,22 +43,32 @@ export const ContactPage = () => {
             subject: subject,
             message: message
         }
-        console.log(data)
+        sendEmail(data)
     }
 
-
     const sendEmail = (data) => {
-
         emailjs.send(emailkey.SERVICE_ID, emailkey.TEMPLATE_ID, data, emailkey.PUBLIC_KEY)
             .then((response) => {
-                //Presentar mensaje de exito
-                console.log(response)
-                alert("Mensaje enviado con exito" + response.text)
+                setSuccess(true);
+                setMessageAlert("se envio correctamente el mensaje");
+                resetForm()
             },
                 (error) => {
                     console.error(error);
-                    alert("Se presento un error enviando el mensaje" + error.text);
+                    setError(true)
+                    setMessageAlert(`Se presento un problema enviando el mensaje: ${error.text}`)
                 })
+    }
+
+    const resetForm = () => {
+        setSubject("")
+        setFullName("")
+        setMessage("")
+        setEmail("")
+        setTimeout(() => {
+            setSuccess(false)
+            setMessageAlert("")
+        }, 5000)
     }
 
     return (
@@ -64,14 +77,25 @@ export const ContactPage = () => {
                 <h1 className="text-[30px]">Contacto</h1>
             </div>
             {error && (
-                <div className="w-full bg-red-500">
+                <div className="w-full">
                     <AlertError
-                        message={messageError}
+                        message={messageAlert}
+                        setError={setError}
+                        setMessageAlert={setMessageAlert}
+                    />
+                </div>
+            )}
+            {success && (
+                <div className="w-full">
+                    <AlertSuccess
+                        message={messageAlert}
+                        setSucces={setSuccess}
+                        setMessageAlert={setMessageAlert}
                     />
                 </div>
             )}
             <div className="py-8 px-4 mx-auto max-w-screen-md">
-                <p className="mb-8 text-left">
+                <p className="mb-8 text-left font-bold">
                     Si desea contactarme puedes enviarme un mensaje indicandome lo que requieres.
                 </p>
                 <form className="space-y-8" onSubmit={handleSubmit}>

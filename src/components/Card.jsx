@@ -8,7 +8,7 @@ export const Card = ({ image, title, description, url, repository }) => {
         <div className="w-full md:w-1/3 lg:w-1/3 my-3 mx-3 flex flex-col border rounded-2xl overflow-hidden bg-gray-50">
             <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4">
                 <div className="flex flex-col border-b sm:border-b-none items-center sm:h-full sm:justify-center grayscale hover:grayscale-0">
-                    <img className="object-fill object-center w-full h-24" src={image} />
+                    <img className="object-cover w-full h-full" src={image} />
                 </div>
                 <div className="flex flex-col sm:border-l pt-4 col-span-3">
                     <div className="flex flex-col space-y-4 sm:space-y-2 pb-4 px-4 text-gray-600">
@@ -30,12 +30,12 @@ export const Card = ({ image, title, description, url, repository }) => {
                     <div className="flex mr-3 mb-3 justify-around md:justify-end xl:justify-end">
                         <a href={repository}
                             target="_blank"
-                            className="bg-red-600 rounded-full px-5 py-1 shadow-xl hover:bg-red-800">
+                            className="bg-[#7B003A] rounded-full px-5 py-1 shadow-xl hover:bg-[#7B003A] text-white mr-4">
                             Fuente
                         </a>
                         <a href={url}
                             target="_blank"
-                            className="bg-red-600 rounded-full px-5 py-1 shadow-xl hover:bg-red-800">
+                            className="bg-[#A3C5E9] rounded-full px-5 py-1 shadow-xl hover:bg-[#7B003A] text-white">
                             Ver mas
                         </a>
                     </div>

@@ -5,7 +5,7 @@ export const studies = [
         institution: "Universidad del Quíndio",
         startDate: "2014",
         endDate: "Actualmente",
-        image: "../src/assets/studies/uniquindio.png"
+        image: "uniquindio.png"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ export const studies = [
         institution: "SENA",
         startDate: "2012",
         endDate: "2013",
-        image: "../src/assets/studies/sena.png"
+        image: "sena.png"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ export const studies = [
         institution: "Fundación María Luisa de Moreno",
         startDate: "2022",
         endDate: "2022",
-        image: "../src/assets/studies/fimlm.png"
+        image: "https://images.fimlm.org/campus/Campus-FIMLM-Mini.png"
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ export const studies = [
         institution: "Institución Eduacativa Nacional Jesus María Ocampo",
         startDate: "2007",
         endDate: "2013",
-        image: "../src/assets/studies/nacional.png"
+        image: "nacional.png"
     },
     {
         id: 5,
@@ -37,6 +37,6 @@ export const studies = [
         institution: "Institución Eduacativa Nacional Jesus María Ocampo",
         startDate: "2003",
         endDate: "2006",
-        image: "../src/assets/studies/nacional.png"
+        image: "nacional.png"
     },
 ]
